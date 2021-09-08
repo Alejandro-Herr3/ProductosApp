@@ -1,4 +1,6 @@
 ﻿using Domain.Entities;
+using Domain.Enums;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -62,6 +64,76 @@ namespace Infraestructure.Productos
             Array.Sort(productos, new Producto.ProductoIdCompare());
             int index = Array.BinarySearch(productos, id);
             return index > 0 ? null : productos[index];
+        }
+
+        public Producto[] GetProductosByUnidadMedida(UnidadMedida um)
+        {
+            Producto[] tmp = null;
+
+            if (productos == null)
+            {
+                return tmp;
+            }
+            
+            foreach (Producto p in productos)
+            {
+                if (p.UnidadMedida == um)
+                {
+                    Add(p, ref tmp);
+                }
+            }
+
+            return tmp;
+        }
+
+        public Producto[] GetProductosByFechaVencimiento(DateTime dt)
+        {
+            Producto[] tmp = null;
+
+            if (productos == null)
+            {
+                return tmp;
+            }
+
+            foreach(Producto p in productos)
+            {
+                if (p.Vencimiento.CompareTo(dt) <= 0)
+                {
+                    Add(p, ref tmp);
+                }
+            }
+
+            return tmp;
+        }
+
+        public Producto[] GetProductosByRangoPrecio(decimal start, decimal end)
+        {
+            Producto[] tmp = null;
+
+            if (productos == null)
+            {
+                return tmp;
+            }
+
+            foreach (Producto p in productos)
+            {
+                if (p.Precio >= start && p.Precio <= end)
+                {
+                    Add(p, ref tmp);
+                }
+            }
+            return tmp;
+        }
+
+        public string GetProductosAsJason()
+        {
+            return JsonConvert.SerializeObject(productos);
+        }
+
+        public Producto[] GetProductosOrderByPrecio()
+        {
+            Array.Sort(productos, new Producto.ProductoOrderByPrecio());
+            return productos;
         }
 
         #endregion
