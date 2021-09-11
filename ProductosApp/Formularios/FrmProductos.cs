@@ -109,5 +109,24 @@ namespace ProductosApp.Formularios
                     break;
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FrmDatosProducto frmDatosProducto = new FrmDatosProducto();
+            frmDatosProducto.pModel = productoModel;
+            frmDatosProducto.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            FrmDatosProducto frmDatosProducto = new FrmDatosProducto();
+            frmDatosProducto.pModel = productoModel;
+            frmDatosProducto.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

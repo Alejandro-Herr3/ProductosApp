@@ -44,6 +44,10 @@ namespace ProductosApp.Formularios
             this.cmbMeaureUnit = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnborrar = new System.Windows.Forms.Button();
+            this.txtidbuscar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudExistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -51,6 +55,9 @@ namespace ProductosApp.Formularios
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtidbuscar);
+            this.groupBox1.Controls.Add(this.btnborrar);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnAceptar);
             this.groupBox1.Controls.Add(this.cmbMeaureUnit);
@@ -59,6 +66,7 @@ namespace ProductosApp.Formularios
             this.groupBox1.Controls.Add(this.nudExistencia);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -214,6 +222,43 @@ namespace ProductosApp.Formularios
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(188, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnborrar
+            // 
+            this.btnborrar.Location = new System.Drawing.Point(107, 308);
+            this.btnborrar.Name = "btnborrar";
+            this.btnborrar.Size = new System.Drawing.Size(75, 23);
+            this.btnborrar.TabIndex = 8;
+            this.btnborrar.Text = "Borrar";
+            this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
+            // 
+            // txtidbuscar
+            // 
+            this.txtidbuscar.Location = new System.Drawing.Point(3, 311);
+            this.txtidbuscar.Name = "txtidbuscar";
+            this.txtidbuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtidbuscar.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 295);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ID:";
             // 
             // FrmDatosProducto
             // 
@@ -249,5 +294,9 @@ namespace ProductosApp.Formularios
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnborrar;
+        private System.Windows.Forms.TextBox txtidbuscar;
+        private System.Windows.Forms.Label label7;
     }
 }

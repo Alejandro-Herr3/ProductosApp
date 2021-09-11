@@ -78,7 +78,24 @@ namespace Infraestructure.Productos
             return tmp;
         }
 
+        public Producto Actualizar(int id)
+        {
+            Producto tmp = null;
 
+            if (productos == null)
+            {
+                return tmp;
+            }
+
+            foreach (Producto p in productos)
+            {
+                if (p.Id == id)
+                {
+                    Add(p);
+                }
+            }
+            return tmp;
+        }
 
         public Producto[] GetProductosByUnidadMedida(UnidadMedida um)
         {
