@@ -125,7 +125,7 @@ namespace Infraestructure.Productos
             return tmp;
         }
 
-        public string GetProductosAsJason()
+        public string GetProductosAsJason(Producto producto)
         {
             return JsonConvert.SerializeObject(productos);
         }
@@ -134,6 +134,11 @@ namespace Infraestructure.Productos
         {
             Array.Sort(productos, new Producto.ProductoOrderByPrecio());
             return productos;
+        }
+
+        public int GetLastProductId()
+        {
+            return productos == null ? 0 : productos[productos.Length - 1].Id;
         }
 
         #endregion
