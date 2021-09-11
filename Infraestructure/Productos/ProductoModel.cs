@@ -59,12 +59,26 @@ namespace Infraestructure.Productos
 
         #region Queries
 
-        public Producto GetProductosById(int id)
+        public Producto[] GetProductosById(int id)
         {
-            Array.Sort(productos, new Producto.ProductoIdCompare());
-            int index = Array.BinarySearch(productos, id);
-            return index > 0 ? null : productos[index];
+            Producto[] tmp = null;
+
+            if ( productos == null)
+            {
+                return tmp;
+            }
+
+            foreach (Producto p in productos)
+            {
+                if ( p.Id == id)
+                {
+                    Add(p, ref tmp);
+                }
+            }
+            return tmp;
         }
+
+
 
         public Producto[] GetProductosByUnidadMedida(UnidadMedida um)
         {
@@ -128,6 +142,11 @@ namespace Infraestructure.Productos
         public string GetProductosAsJason(Producto producto)
         {
             return JsonConvert.SerializeObject(productos);
+        }
+
+        public string ConvertirBusqueda(Producto[] p)
+        {
+            return JsonConvert.SerializeObject(p);
         }
 
         public Producto[] GetProductosOrderByPrecio()

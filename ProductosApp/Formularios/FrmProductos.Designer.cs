@@ -133,6 +133,7 @@ namespace ProductosApp.Formularios
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // nudMinino
             // 
@@ -162,7 +163,7 @@ namespace ProductosApp.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 522);
+            this.ClientSize = new System.Drawing.Size(579, 345);
             this.Controls.Add(this.dtpCaducidad);
             this.Controls.Add(this.nudMaximo);
             this.Controls.Add(this.nudMinino);
